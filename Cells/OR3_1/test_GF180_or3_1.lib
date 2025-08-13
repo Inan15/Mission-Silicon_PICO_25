@@ -1,0 +1,178 @@
+library (test_GF180) {
+  technology : cmos;
+  delay_model : table_lookup;
+  bus_naming_style : "%s-%d";
+
+  /* Units */
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1uA";
+  pulling_resistance_unit : "1kOhm";
+  leakage_power_unit : "1nW";
+  capacitive_load_unit : "1pF";
+
+  /* Slew characteristics */
+  slew_upper_threshold_pct_rise : 80;
+  slew_lower_threshold_pct_rise : 20;
+  slew_upper_threshold_pct_fall : 80;
+  slew_lower_threshold_pct_fall : 20;
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+
+  /* Operating Conditions */
+  nom_process : 1;
+  nom_voltage : 3.3;
+  nom_temperature : 25;
+
+  /* Table Templates */
+  lu_table_template (delay_template_3x5) {
+    variable_1 : input_net_transition;
+    variable_2 : total_output_net_capacitance;
+    index_1 ("0.06, 0.3, 0.6");
+    index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+  }
+
+  /* OR3_1 */
+  cell (OR3_1) {
+    area : 0;
+    pg_pin (Vdd) {
+      voltage_name : Vdd;
+      pg_type : primary_power;
+    }
+    pg_pin (Vss) {
+      voltage_name : Vss;
+      pg_type : primary_ground;
+    }
+    pg_pin (VPW) {
+      voltage_name : VPW;
+      pg_type : pwell;
+    }
+    pg_pin (VNW) {
+      voltage_name : VNW;
+      pg_type : nwell;
+    }
+    pin (A) {
+      direction : input;
+      capacitance : 0.004591;
+    }
+    pin (B) {
+      direction : input;
+      capacitance : 0.004270;
+    }
+    pin (C) {
+      direction : input;
+      capacitance : 0.003988;
+    }
+    pin (Y) {
+      direction : output;
+      function : "(A|B|C)";
+      timing () {
+        related_pin : "A";
+        cell_rise (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.409855, 0.941548, 2.001077, 2.795279, 5.442086", \
+            "0.444190, 0.975902, 2.035482, 2.829700, 5.476527", \
+            "0.479778, 1.011021, 2.070509, 2.864711, 5.511523");
+        }
+        rise_transition (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.402339, 1.162073, 2.685315, 3.828204, 7.638261", \
+            "0.402139, 1.162034, 2.685306, 3.828199, 7.638259", \
+            "0.402071, 1.162012, 2.685301, 3.828196, 7.638258");
+        }
+        cell_fall (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.470389, 0.947447, 1.897642, 2.610316, 4.985941", \
+            "0.488909, 0.965990, 1.916193, 2.628868, 5.004496", \
+            "0.507113, 0.984200, 1.934333, 2.646991, 5.022597");
+        }
+        fall_transition (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.342943, 0.967100, 2.234687, 3.186313, 6.358446", \
+            "0.343109, 0.967116, 2.234687, 3.186313, 6.358446", \
+            "0.344503, 0.967253, 2.234689, 3.186313, 6.358446");
+        }
+      }
+      timing () {
+        related_pin : "B";
+        cell_rise (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.389491, 0.919603, 1.978515, 2.772534, 5.419055", \
+            "0.422511, 0.952673, 2.011627, 2.805658, 5.452195", \
+            "0.449744, 0.979671, 2.038593, 2.832620, 5.479154");
+        }
+        rise_transition (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.398799, 1.160427, 2.684423, 3.827481, 7.637739", \
+            "0.398797, 1.160427, 2.684422, 3.827481, 7.637739", \
+            "0.399155, 1.160458, 2.684431, 3.827486, 7.637741");
+        }
+        cell_fall (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.446713, 0.923781, 1.873983, 2.586658, 4.962286", \
+            "0.468774, 0.945822, 1.896006, 2.608677, 4.984300", \
+            "0.502293, 0.979385, 1.929482, 2.642131, 5.017727");
+        }
+        fall_transition (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.342942, 0.967100, 2.234687, 3.186313, 6.358446", \
+            "0.343304, 0.967136, 2.234687, 3.186313, 6.358446", \
+            "0.345374, 0.967335, 2.234690, 3.186313, 6.358446");
+        }
+      }
+      timing () {
+        related_pin : "C";
+        cell_rise (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.355956, 0.885528, 1.944152, 2.738072, 5.384427", \
+            "0.385270, 0.914976, 1.973656, 2.767590, 5.413962", \
+            "0.399289, 0.928885, 1.987565, 2.781501, 5.427877");
+        }
+        rise_transition (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.397858, 1.159933, 2.684062, 3.827154, 7.637459", \
+            "0.397866, 1.159933, 2.684062, 3.827154, 7.637459", \
+            "0.398472, 1.159933, 2.684062, 3.827154, 7.637459");
+        }
+        cell_fall (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.392516, 0.869607, 1.819833, 2.532514, 4.908149", \
+            "0.436507, 0.913672, 1.863936, 2.576627, 4.952275", \
+            "0.487912, 0.965164, 1.915394, 2.628078, 5.003718");
+        }
+        fall_transition (delay_template_3x5) {
+          index_1 ("0.06, 0.3, 0.6");
+          index_2 ("0.06, 0.18, 0.42, 0.6, 1.2");
+          values ( \
+            "0.342699, 0.967075, 2.234686, 3.186313, 6.358446", \
+            "0.342767, 0.967081, 2.234686, 3.186313, 6.358446", \
+            "0.344517, 0.967250, 2.234689, 3.186313, 6.358446");
+        }
+      }
+    }
+  }
+}
