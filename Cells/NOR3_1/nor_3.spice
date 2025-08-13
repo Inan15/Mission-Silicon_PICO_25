@@ -1,0 +1,28 @@
+** sch_path: /foss/designs/nor_3.sch
+.subckt nor_3 vdd A B C Y vss
+*.iopin vdd
+*.iopin vss
+*.ipin B
+*.ipin A
+*.ipin C
+*.opin r_3 vdd AY
+XM13 net1 A vdd vdd pfet_03v3 L=0.3u W=2.55u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM14 net2 B net1 vdd pfet_03v3 L=0.3u W=2.55u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM15 Y C net2 vdd pfet_03v3 L=0.3u W=2.55u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM16 Y A vss vss nfet_03v3 L=0.3u W=0.85u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM17 Y B vss vss nfet_03v3 L=0.3u W=0.85u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+XM18 Y C vss vss nfet_03v3 L=0.3u W=0.85u nf=1 ad='int((nf+1)/2) * W/nf * 0.18u' as='int((nf+2)/2) * W/nf * 0.18u' pd='2*int((nf+1)/2) * (W/nf + 0.18u)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.18u)' nrd='0.18u / W' nrs='0.18u / W' sa=0 sb=0 sd=0 m=1
+**** begin user architecture code
+
+.include /foss/pdks/gf180mcuC/libs.tech/ngspice/design.ngspice
+.lib /foss/pdks/gf180mcuC/libs.tech/ngspice/sm141064.ngspice typical
+
+**** end user architecture code
+.ends nor_3
+.end
