@@ -4,10 +4,24 @@ We aim to extend the existing OSU standard cell library by designing and validat
 We propose to design and characterize three new logic cells: XNOR3_1, OR3_1, and NOR3_1, for the 12T track.We aim to extend our contribution as time permits
 These additional cells can support improved synthesis and optimization in digital design flows using open-source tools.
 
-Veer Pratap Singh
-Shravya Shetty
-Ahmad Arif Bil Haq
-Haoran Du
-Rohith Neerati
+Team Members:
+  - Veer Pratap Singh
+  - Shravya Shetty
+  - Ahmad Arif Bil Haq
+  - Haoran Du
+  - Rohith Neerati
 
-The github is divided 3 folders for each cell we have. Each cell there is a documentation file explaining the characteristics of that standard cell (# TODO)
+
+# Proposal: 
+This is our team proposal, we are on track to completing it.
+https://docs.google.com/presentation/d/1PyyyJpWO1DASHsyTuQ9lCNGMu142cA9ruFeRevgfgug/edit?usp=sharing
+
+# Progress Tracker:
+https://docs.google.com/spreadsheets/d/1KfCekxRjOjHjouLM05mJ-y-WwaOuxyu1kzwyHJEgWy0/edit?usp=sharing
+
+# Schematic/Simulation Review Slides: 
+https://docs.google.com/presentation/d/1ZtBJcP78wU-X0Am4UVAWaJyvXcmcEdRsoiB4gfwOUMw/edit?slide=id.g37854e43ba1_0_14#slide=id.g37854e43ba1_0_14
+
+# PIN and AREA
+
+
