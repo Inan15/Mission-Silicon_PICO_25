@@ -1,5 +1,15 @@
 # DOCUMENTATION
 
+This is the 3 input OR gate with drive strength 1
+
+<img src="image1/or3_1.png" alt="Scehamtic" width="600">
+
+Our schematic uses width 2.55u as we want to reduce the effective resistance of the pull up network and maintain the propogation delay. For the Length we are sticking to the ones already present in the OSU library.
+
+Here is the Functional Form:
+
+<img src="image1/untitled-2.png" alt="wf" width="600">
+
 These are the Static power table followed by Propogation delay. THe table is based exactly on how the official documentation.
 
 # Static Power
@@ -10,3 +20,4 @@ These are the Static power table followed by Propogation delay. THe table is bas
 
 # Layout (Subject to change)
 <img src="image1/or3_1.jpeg" alt="Layout" width="600">
+The area for the above layout comes out to be around ~304 micron^2
