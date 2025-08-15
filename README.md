@@ -22,6 +22,9 @@ https://docs.google.com/spreadsheets/d/1KfCekxRjOjHjouLM05mJ-y-WwaOuxyu1kzwyHJEg
 # Schematic/Simulation Review Slides: 
 https://docs.google.com/presentation/d/1ZtBJcP78wU-X0Am4UVAWaJyvXcmcEdRsoiB4gfwOUMw/edit?slide=id.g37854e43ba1_0_14#slide=id.g37854e43ba1_0_14
 
-# PIN and AREA
+# PIN and Estimated AREA:
+https://docs.google.com/presentation/d/1z5XXq3oKvpiAwS1Ww1MSvouhdq_sEIsK7XTiJ3aRdyU/edit?usp=sharing
+
+The documentation section in each cell aims to give complete technical overview of the cell and reflects the progress made in simulation of each cell. 
 
 
