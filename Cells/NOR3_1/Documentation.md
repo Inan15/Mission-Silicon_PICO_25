@@ -1,14 +1,14 @@
 # DOCUMENTATION NOR3_1
 
-This is the 3 input OR gate with drive strength 1
+This is the 3 input NOR gate with drive strength 1
 
-<img src="image/nor_3.png" alt="Scehamtic" width="600">
+<img src="images/nor_3.png" alt="Scehamtic" width="600">
 
 Our schematic uses width 2.55u as we want to reduce the effective resistance of the pull up network and maintain the propogation delay. For the Length we are sticking to the ones already present in the OSU library.
 
 Here is the Functional Form:
 
-<img src="image/nor_3_1wf.png" alt="wf" width="600">
+<img src="images/nor3_1wf.png" alt="wf" width="600">
 
 These are the Static power table followed by Propogation delay. THe table is based exactly on how the official documentation.
 # Functional Table and Static Power
